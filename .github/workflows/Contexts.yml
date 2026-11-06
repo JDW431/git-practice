@@ -12,7 +12,7 @@ jobs:
           echo "Event:      ${{ github.event }}"
           echo "Branch:     ${{ github.ref_name }}"
           echo "Commit:     ${{ github.sha }}"
-      - name: GitHub Context
+      - name: Runner Information
         run: |
           echo "Runner:        ${{ runner.name }}"
           echo "OS:            ${{ runner.os }}"
