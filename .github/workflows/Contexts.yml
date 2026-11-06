@@ -12,3 +12,10 @@ jobs:
           echo "Event:      ${{ github.event }}"
           echo "Branch:     ${{ github.ref_name }}"
           echo "Commit:     ${{ github.sha }}"
+      - name: GitHub Context
+        run: |
+          echo "Repository: ${{ runner.name }}"
+          echo "Repository: ${{ runner.os }}"
+          echo "Repository: ${{ runner.arch }}"
+          echo "Repository: ${{ runner.environment }}"
+          echo "Repository: ${{ runner.temp }}"
