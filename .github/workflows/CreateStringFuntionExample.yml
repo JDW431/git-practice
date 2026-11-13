@@ -1,3 +1,4 @@
+name: Create String Funtion
 on: workflow_dispatch
 jobs:
   string-create:
