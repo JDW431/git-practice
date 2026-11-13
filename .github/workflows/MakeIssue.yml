@@ -1,7 +1,5 @@
 name: Issue Make Example
-on:
-  push:
-    branches: [ main ]
+on: push
 
 permissions:
   issues: write
