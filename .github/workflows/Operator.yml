@@ -19,3 +19,9 @@ jobs:
         echo "Greater equal: ${{ 10 >= 5 }}"
         echo "Less equal: ${{ 10 <= 5 }}"
         echo "type Error: ${{ true == 1 }}"
+
+    - name: Group
+      run: |
+        echo "Group 1: ${{ (true || false) && false }}"
+        echo "Group 1: ${{ true || (false && false) }}"
+        echo "Group 1: ${{ (10 > 5) && (20 > 10) }}"
