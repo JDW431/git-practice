@@ -9,7 +9,7 @@ jobs:
 
   job2:
     needs: job1
-    if: ${{ success() }}
+    if: ${{ github.actor != 'guest' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job1 succeeded"
