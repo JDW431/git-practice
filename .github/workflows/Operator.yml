@@ -25,3 +25,16 @@ jobs:
         echo "Group 1: ${{ (true || false) && false }}"
         echo "Group 1: ${{ true || (false && false) }}"
         echo "Group 1: ${{ (10 > 5) && (20 > 10) }}"
+
+    - name: Index
+      run: |
+        echo "First: ${{ fromJSON('["Apple","Banana","Cherry"]')[0] }}"
+        echo "Second: ${{ fromJSON('["Apple","Banana","Cherry"]')[1] }}"
+        echo "Third: ${{ fromJSON('["Apple","Banana","Cherry"]')[2] }}"
+
+    - name: Property Access
+      run: |
+        echo "Repository: ${{ github.repository }}"
+        echo "Actor: ${{ github.actor }}"
+        echo "Branch: ${{ github.ref_name }}"
+        echo "Event: ${{ github.event_name }}"
