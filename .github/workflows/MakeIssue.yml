@@ -1,0 +1,28 @@
+name: Issue Comment Example
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  issues: write
+jobs:
+  write:
+    runs-on: ubuntu-latest
+
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      # 1. GitHub CLI 사용
+      - name: Comment with GitHub CLI
+        run:
+          gh issue create --title "${{ github.event.head_commit.message }}" --body "Issue made in GitHub CLI"
+
+      # 2. curl 사용
+      - name: Comment with curl
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://github.com{{ github.repository }}/issues" \
+            -d "$(jq -n --arg title "${{ github.event.head_commit.message }}" '{title: $title, body: "Issue made in Curl"}')"
