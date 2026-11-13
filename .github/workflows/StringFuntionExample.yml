@@ -10,7 +10,7 @@ jobs:
         TEST_CONTAINS_2: ${{ contains('Hello GitHub', 'Python') }}
         TEST_STARTWITH_1: ${{ startsWith('Hello GitHub', 'Hello') }}
         TEST_STARTWITH_2: ${{ startsWith('Hello GitHub', 'Git') }}
-        TEST_ENDWITH_1: ${{ startsWith('Hello GitHub', 'GitHub') }}
-        TEST_ENDWITH_2: ${{ startsWith('Hello GitHub', 'Hello') }}
-        TEST_ENDWITH_3: ${{ startsWith('Hello GitHub', 'github') }}
+        TEST_ENDWITH_1: ${{ endsWith('Hello GitHub', 'GitHub') }}
+        TEST_ENDWITH_2: ${{ endsWith('Hello GitHub', 'Hello') }}
+        TEST_ENDWITH_3: ${{ endsWith('Hello GitHub', 'github') }}
       run: printenv | grep '^TEST_' | sort
