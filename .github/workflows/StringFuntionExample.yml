@@ -13,4 +13,4 @@ jobs:
         TEST_ENDWITH_1: ${{ startsWith('Hello GitHub', 'GitHub') }}
         TEST_ENDWITH_2: ${{ startsWith('Hello GitHub', 'Hello') }}
         TEST_ENDWITH_3: ${{ startsWith('Hello GitHub', 'github') }}
-      run: printenv | grep '^TEST_' | Sort
+      run: printenv | grep '^TEST_' | sort
