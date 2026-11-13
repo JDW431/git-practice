@@ -1,7 +1,7 @@
 name: Hash
 on: workflow_dispatch
 jobs:
-  string-create:
+  Hash:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
