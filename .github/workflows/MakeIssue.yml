@@ -1,4 +1,4 @@
-name: Issue Comment Example
+name: Issue Make Example
 on:
   push:
     branches: [ main ]
